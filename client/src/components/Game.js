@@ -1251,8 +1251,8 @@ const Game = (props) => {
                                     key={i}
                                     className='Card'
                                     onClick={() => onCardPlayedHandler(item)}
-                                    src={require(`../assets/card-back.png`).default}
-                                    alt="UNO card back"
+                                    src={require('../assets/card-back.png')}
+                                    alt=""
                                     />
                             ))}
                             {turn==='Player 2' && <Spinner />}
@@ -1263,7 +1263,7 @@ const Game = (props) => {
                             {playedCardsPile && playedCardsPile.length>0 &&
                             <img
                                 className='Card'
-                                src={require(`../assets/cards-front/${playedCardsPile[playedCardsPile.length-1]}.png`).default}
+                                src={require(`../assets/cards-front/${playedCardsPile[playedCardsPile.length-1]}.png`)}
                                 alt=""
                                 /> }
                             <button className='game-button orange' disabled={player1Deck.length !== 2} onClick={() => {
@@ -1279,7 +1279,7 @@ const Game = (props) => {
                                     key={i}
                                     className='Card'
                                     onClick={() => onCardPlayedHandler(item)}
-                                    src={require(`../assets/cards-front/${item}.png`).default}
+                                    src={require(`../assets/cards-front/${item}.png`)}
                                     alt=""
                                     />
                             ))}
@@ -1318,7 +1318,7 @@ const Game = (props) => {
                                     key={i}
                                     className='Card'
                                     onClick={() => onCardPlayedHandler(item)}
-                                    src={require(`../assets/card-back.png`).default}
+                                    src={require('../assets/card-back.png')}
                                     alt=""
                                     />
                             ))}
@@ -1330,7 +1330,7 @@ const Game = (props) => {
                             {playedCardsPile && playedCardsPile.length>0 &&
                             <img
                                 className='Card'
-                                src={require(`../assets/cards-front/${playedCardsPile[playedCardsPile.length-1]}.png`).default}
+                                src={require(`../assets/cards-front/${playedCardsPile[playedCardsPile.length-1]}.png`)}
                                 alt=""
                                 /> }
                             <button className='game-button orange' disabled={player2Deck.length !== 2} onClick={() => {
@@ -1346,7 +1346,7 @@ const Game = (props) => {
                                     key={i}
                                     className='Card'
                                     onClick={() => onCardPlayedHandler(item)}
-                                    src={require(`../assets/cards-front/${item}.png`).default}
+                                    src={require(`../assets/cards-front/${item}.png`)}
                                     alt=""
                                     />
                             ))}
