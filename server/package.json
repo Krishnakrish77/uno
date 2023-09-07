@@ -4,9 +4,7 @@
   "description": "Online multiplayer card game",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "client": "npm start --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "start": "node server"
   },
   "repository": {
     "type": "git",
