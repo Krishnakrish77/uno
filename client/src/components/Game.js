@@ -60,6 +60,7 @@ const Game = (props) => {
 
     //initialize game state
     const [gameOver, setGameOver] = useState(true)
+    const [playAgain, setPlayAgain] = useState(false)
     const [winner, setWinner] = useState('')
     const [turn, setTurn] = useState('')
     const [player1Deck, setPlayer1Deck] = useState([])
@@ -126,7 +127,7 @@ const Game = (props) => {
             playedCardsPile: [...playedCardsPile],
             drawCardPile: [...drawCardPile]
         })
-    }, [])
+    }, [playAgain])
 
     useEffect(() => {
         socket.on('initGameState', ({ gameOver, turn, player1Deck, player2Deck, currentColor, currentNumber, playedCardsPile, drawCardPile }) => {
@@ -1240,7 +1241,7 @@ const Game = (props) => {
 
                 {users.length===2 && <>
 
-                    {gameOver ? <div>{winner !== '' && <><h1>GAME OVER</h1><h2>{winner} wins!</h2></>}</div> :
+                    {gameOver ? <div>{winner !== '' && <><h1>GAME OVER</h1><h2>{winner} wins!</h2><br/><button className="game-button green" onClick={() => setPlayAgain(true)}>PLAY AGAIN</button></>}</div> :
                     <div>
                         {/* PLAYER 1 VIEW */}
                         {currentUser === 'Player 1' && <>    
