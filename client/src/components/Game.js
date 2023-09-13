@@ -61,7 +61,7 @@ const Game = (props) => {
 
     //initialize game state
     const [gameOver, setGameOver] = useState(true)
-    const [playAgain, setPlayAgain] = useState(false)
+    const [playAgain, setPlayAgain] = useState(1)
     const [winner, setWinner] = useState('')
     const [turn, setTurn] = useState('')
     const [player1Deck, setPlayer1Deck] = useState([])
@@ -88,7 +88,8 @@ const Game = (props) => {
     //runs once on component mount
     useEffect(() => {
         //shuffle PACK_OF_CARDS array
-        const shuffledCards = shuffleArray(PACK_OF_CARDS)
+        const shuffledCardsArray = shuffleArray(PACK_OF_CARDS)
+        const shuffledCards = shuffledCardsArray.slice(0)
 
         //extract first 7 elements to player1Deck
         const player1Deck = shuffledCards.splice(0, 7)
@@ -1448,7 +1449,7 @@ const Game = (props) => {
 
                 {users.length===2 && <>
 
-                    {gameOver ? <div>{winner !== '' && <><h1>GAME OVER</h1><h2>{winner} wins!</h2><br/><button className="game-button green" onClick={() => setPlayAgain(true)}>PLAY AGAIN</button></>}</div> :
+                    {gameOver ? <div>{winner !== '' && <><h1>GAME OVER</h1><h2>{winner} wins!</h2><br/><button className="game-button green" onClick={() => setPlayAgain(playAgain + 1)}>PLAY AGAIN</button></>}</div> :
                     <div>
                         {/* PLAYER 1 VIEW */}
                         {currentUser === 'Player 1' && <>    
