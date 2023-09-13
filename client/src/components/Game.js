@@ -171,7 +171,11 @@ const Game = (props) => {
             const chatBody = document.querySelector('.chat-body')
             chatBody.scrollTop = chatBody.scrollHeight
         })
-    }, [])
+    }, [playGameOverSound])
+
+    useEffect(() => {
+        playUnoSound()
+    }, [isUnoButtonPressed, playUnoSound])
 
     //some util functions
     const checkGameOver = (arr) => {
@@ -1477,7 +1481,6 @@ const Game = (props) => {
                                 /> }
                             <button className='game-button orange' disabled={player1Deck.length !== 2} onClick={() => {
                                 setUnoButtonPressed(!isUnoButtonPressed)
-                                playUnoSound()
                             }}>UNO</button>
                         </div>
                         <br />
@@ -1545,7 +1548,6 @@ const Game = (props) => {
                                 /> }
                             <button className='game-button orange' disabled={player2Deck.length !== 2} onClick={() => {
                                 setUnoButtonPressed(!isUnoButtonPressed)
-                                playUnoSound()
                             }}>UNO</button>
                         </div>
                         <br />
